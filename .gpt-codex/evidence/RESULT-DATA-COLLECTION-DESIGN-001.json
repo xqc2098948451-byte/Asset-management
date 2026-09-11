@@ -1,0 +1,66 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-DESIGN-001",
+  "extension": {
+    "kind": "SKILL",
+    "id": "github-project-continuity",
+    "version": "1.0.0"
+  },
+  "status": "PASS",
+  "source_project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "source_project_name": "Asset-management",
+  "framework_version": "2.2.1",
+  "source_github_repository_id": "1366683980",
+  "source_github_repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "local_head_sha": "424447ad1906f5e65e8add38372dbf56018010ed",
+  "remote_head_sha": "424447ad1906f5e65e8add38372dbf56018010ed",
+  "verified_baseline_sha": "424447ad1906f5e65e8add38372dbf56018010ed",
+  "sync_status": "SYNCED",
+  "push_status": "SUCCESS",
+  "remote_verification": "VERIFIED",
+  "publication_authority": "CONFIRMED_PUBLICATION",
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json"
+  ],
+  "return_to_gpt_required": true,
+  "state_revision": 3,
+  "execution": "COMPLETED",
+  "changed": [
+    ".gpt-codex/evidence/RESULT-DATA-COLLECTION-DESIGN-001.json",
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json",
+    ".gpt-codex/STATE.json"
+  ],
+  "verify": [
+    "spec self-review PASS",
+    "validate_project.py PASS",
+    "remote W live verification PASS",
+    "repository binding PASS",
+    "no business implementation PASS"
+  ],
+  "deviations": [],
+  "git": {
+    "base_sha": "a669d54b3632daa32c5a167617a0498b2203162e",
+    "implementation_sha": "424447ad1906f5e65e8add38372dbf56018010ed"
+  },
+  "parallel_batch": "NONE",
+  "execution_unit": "WORK-DATA-COLLECTION-DESIGN-001",
+  "observability_fitness": [
+    "NONE"
+  ],
+  "extension_evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json"
+  ],
+  "state_transition_request": {
+    "from": "AUTHORIZED@revision-2",
+    "to": "AUTHORIZED@revision-3",
+    "expected_revision": 2
+  },
+  "blockers": [],
+  "completion_gate": "GPT_DECISION",
+  "user_approval_required": false,
+  "next_gpt_action": "Create the Data Collection implementation plan from the approved specification; do not implement business code until that plan is separately approved."
+}

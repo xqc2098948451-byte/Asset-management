@@ -17,12 +17,14 @@
     ".gpt-codex/work/WORK-DATA-COLLECTION-DESIGN-001.json",
     ".gpt-codex/CONTROL.json",
     ".gpt-codex/STATE.json",
-    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json"
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json",
+    ".gpt-codex/evidence/RESULT-DATA-COLLECTION-DESIGN-001.json"
   ],
   "observed_at": "2026-09-12T06:47:54+08:00",
   "framework_version": "2.2.1",
   "framework_head_sha": "858dedb266c8e084d83433f94e61ddd7fa1e4cb9",
   "base_commit": "a669d54b3632daa32c5a167617a0498b2203162e",
+  "work_commit": "424447ad1906f5e65e8add38372dbf56018010ed",
   "repository_id": "1366683980",
   "repository_full_name": "xqc2098948451-byte/Asset-management",
   "current_remote_ref": "refs/heads/main",
@@ -53,10 +55,14 @@
     "PROJECT_CONTEXT_BINDING: PASS"
   ],
   "publication": {
-    "status": "PENDING_COMMIT_AND_LIVE_REMOTE_VERIFICATION",
+    "status": "WORK_COMMIT_W_LIVE_VERIFIED",
+    "remote_head_sha": "424447ad1906f5e65e8add38372dbf56018010ed",
+    "remote_verification": "VERIFIED",
+    "push_status": "SUCCESS",
     "force_push": false,
     "history_rewrite": false,
-    "other_branches_modified": false
+    "other_branches_modified": false,
+    "result_ref": ".gpt-codex/evidence/RESULT-DATA-COLLECTION-DESIGN-001.json"
   },
-  "notes": "User-approved design specification only. No Data Collection implementation, business code, database schema, Collector, UI, tests, dependencies, or application scaffold was created."
+  "notes": "The approved Data Collection specification was persisted without implementation. The original self-review facts are preserved; publication reconciliation records W as live-observed and adds the durable Result reference."
 }
