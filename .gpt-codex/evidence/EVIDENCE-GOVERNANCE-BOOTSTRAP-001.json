@@ -1,0 +1,64 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "evidence_id": "EVIDENCE-GOVERNANCE-BOOTSTRAP-001",
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "work_unit_id": "WORK-GOVERNANCE-BOOTSTRAP-001",
+  "source": "TOOL_OBSERVED",
+  "subject": "governance-bootstrap",
+  "state_revision": 1,
+  "identity_binding": {
+    "type": "PROJECT_CONTEXT_ID",
+    "value": "43e85b1a-131b-4897-aa89-9b250d59fde0"
+  },
+  "result": "PASS",
+  "artifact_refs": [
+    ".gpt-codex/PROJECT.md",
+    ".gpt-codex/CONTROL.json",
+    ".gpt-codex/STATE.json",
+    ".gpt-codex/work/WORK-GOVERNANCE-BOOTSTRAP-001.json",
+    ".gpt-codex/REUSE_REPORT.md",
+    ".gpt-codex/FRAMEWORK_COMPATIBILITY_REPORT.md",
+    ".gpt-codex/GOVERNANCE_COMPILE_REPORT.md",
+    ".gpt-codex/extensions/skills",
+    ".gpt-codex/extensions/guardrails"
+  ],
+  "observed_at": "2026-09-12T05:22:59+08:00",
+  "framework_version": "2.2.1",
+  "framework_head_sha": "858dedb266c8e084d83433f94e61ddd7fa1e4cb9",
+  "base_commit": "6ec7850454f0e6e0cd8805c9baff4abfc246e1ea",
+  "repository_id": "1366683980",
+  "repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "validate_command": "python D:\\资产管理\\_gpt-codex-framework-readonly\\.gpt-codex\\scripts\\validate_project.py .",
+  "validator_output": [
+    "RESULT: PASS",
+    "PROJECT: PRJ-ASSET-MGMT-20260912-001",
+    "STATE: AUTHORIZED@revision-1",
+    "PROJECT_CONTEXT_BINDING: PASS"
+  ],
+  "selected_builtin_ids": {
+    "skills": [
+      "repository-discovery",
+      "verification",
+      "handoff",
+      "framework-compatibility",
+      "harvest-export",
+      "git-basic",
+      "github-project-continuity"
+    ],
+    "guardrails": [
+      "universal-safety",
+      "cross-project-context-binding",
+      "github-repository-binding"
+    ],
+    "fitness": []
+  },
+  "publication": {
+    "status": "PENDING_COMMIT_AND_LIVE_REMOTE_VERIFICATION",
+    "force_push": false,
+    "history_rewrite": false,
+    "other_branches_modified": false
+  },
+  "notes": "Governance-only bootstrap. No project-local extension, business code, Data Collection code, application scaffolding, or business database schema was created."
+}

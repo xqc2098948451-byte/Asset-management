@@ -1,0 +1,61 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "work_unit_id": "WORK-GOVERNANCE-BOOTSTRAP-001",
+  "goal": "Complete project governance bootstrap and make the governed project mechanically valid.",
+  "scope": {
+    "owned_paths": [
+      ".gpt-codex/CONTROL.json",
+      ".gpt-codex/STATE.json",
+      ".gpt-codex/work/**",
+      ".gpt-codex/evidence/**",
+      ".gpt-codex/extensions/**",
+      ".gpt-codex/*REPORT*"
+    ],
+    "excluded_paths": [
+      "docs/superpowers/specs/2026-09-12-asset-management-architecture-design.md",
+      "business code directories and files",
+      "database business migrations and schemas",
+      "Framework Root"
+    ]
+  },
+  "acceptance": [
+    "Required and evidence-supported Built-ins are copied as versioned snapshots.",
+    "No project-local extension is created.",
+    "validate_project.py returns RESULT: PASS before and after authorization.",
+    "STATE.json ends at AUTHORIZED with revision 1.",
+    "No business code, Data Collection code, application scaffolding, or business database schema is created.",
+    "The committed publication is live-verified on origin/main."
+  ],
+  "selected_extensions": {
+    "skills": [
+      "repository-discovery",
+      "verification",
+      "handoff",
+      "framework-compatibility",
+      "harvest-export",
+      "git-basic",
+      "github-project-continuity"
+    ],
+    "guardrails": [
+      "universal-safety",
+      "cross-project-context-binding",
+      "github-repository-binding"
+    ],
+    "fitness": []
+  },
+  "permissions": {
+    "project_write": "owned_paths_only",
+    "framework_read": "ALLOW",
+    "framework_write": "DENY",
+    "business_code_write": "DENY",
+    "data_collection": "DENY",
+    "git_remote_write": "main_only_no_force_no_history_rewrite"
+  },
+  "state": "AUTHORIZED",
+  "basis_state_revision": 0,
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-GOVERNANCE-BOOTSTRAP-001.json"
+  ]
+}

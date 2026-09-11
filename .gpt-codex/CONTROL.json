@@ -13,7 +13,7 @@
   "framework": {
     "adopted_version": "2.2.1",
     "last_evaluated_version": "2.2.1",
-    "evaluation_result": "ADOPTED"
+    "evaluation_result": "NO_ACTION"
   },
   "roots": {
     "project_role": "AUTHORITATIVE",
@@ -23,18 +23,118 @@
     "harvest_namespace": "PRJ-ASSET-MGMT-20260912-001"
   },
   "extensions": {
-    "skills": [],
+    "skills": [
+      {
+        "id": "repository-discovery",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "bootstrap requires read-only repository identity, structure, tooling, and governance discovery",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/skills/repository-discovery",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "B06D9A55D1A0AAA451531C57FC6FF2640508B319F6CD4B18EFF0BEFEDA45A549"
+      },
+      {
+        "id": "verification",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "the Work Unit requires durable verification evidence and final validator proof",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/skills/verification",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "7BEEF863097EC64A62C5A51A28D62FFE4CCC84BE37750068655082BA71404AE6"
+      },
+      {
+        "id": "handoff",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.1.0",
+        "reason": "the governed bootstrap must leave an authoritative compact next-action packet",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/skills/handoff",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "CDA17CCE60D6BDE978EA9F1511D1284407501117456AD4B3B14ED8A7BB0A5D44"
+      },
+      {
+        "id": "framework-compatibility",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "the Work Unit explicitly requires a read-only Framework Compatibility Scan before adoption",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/skills/framework-compatibility",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "2B3FD68D5B23DFD6296C4B201B90C242771AC71AF8CADEBD967BF03446F1B8D8"
+      },
+      {
+        "id": "harvest-export",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "the framework capability is selected for future normalized project-local candidates; none are created in this Work Unit",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/skills/harvest-export",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "90A6607EAAD7E4FC82211776FCAA533207E2D17EFA06D4D5DD42BADC2E907659"
+      },
+      {
+        "id": "git-basic",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "the authorized Work Unit requires scoped Git status, diff, commit, and push operations",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/skills/git-basic",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "0D0A55BBBFAF220B9794364A754D5CB922E012ADC9099D65E66E07F718783FAD"
+      },
+      {
+        "id": "github-project-continuity",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "the Work Unit requires publication to and live verification of the one bound GitHub main branch",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/skills/github-project-continuity",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "62DE1B3EEAF734292FBAEE374F6966ED1A31E71578E35C81A3189EB6719900F3"
+      }
+    ],
     "guardrails": [
+      {
+        "id": "universal-safety",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "all governed execution must retain the framework universal safety boundary",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/guardrails/universal-safety",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "894FE0E7878B0020E6CF2CAD3D77FEFC29BBB0EABAC00FB0DCA19AE9FE86AAE7"
+      },
       {
         "id": "cross-project-context-binding",
         "source": "builtin",
         "enabled": true,
         "version": "1.0.0",
-        "reason": "bind GPT instructions and Codex returns to one project identity",
+        "reason": "bind all GPT instructions and Codex returns to this project identity",
         "adoption": "COPIED_SNAPSHOT",
         "installed_path": ".gpt-codex/extensions/guardrails/cross-project-context-binding",
-        "source_framework_version": "2.1.0",
-        "source_checksum": "273302fdaf953030f929588c285d012188dbf6d04c48506c891e0daad313f250"
+        "source_framework_version": "2.2.1",
+        "source_checksum": "655B6A06C2FAB13ED2C91B93B57BC8CF277CFFD3B512A8D8254608E30080C7F5"
+      },
+      {
+        "id": "github-repository-binding",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "bind continuity and publication to repository_id 1366683980 and origin/main",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/guardrails/github-repository-binding",
+        "source_framework_version": "2.2.1",
+        "source_checksum": "631E54D81EAAA2CE70A4DD6BE2BBD5EFA56BB64C2107BDF547CFD780BCD5AF26"
       }
     ],
     "fitness": []
