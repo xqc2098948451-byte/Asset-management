@@ -1,0 +1,83 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-IMPLEMENTATION-PLAN-001",
+  "goal": "Persist the user-approved Data Collection implementation plan as the authoritative implementation plan without beginning business implementation.",
+  "basis_state_revision": 3,
+  "scope": {
+    "owned_paths": [
+      "docs/superpowers/plans/2026-09-12-data-collection-implementation.md",
+      ".gpt-codex/work/**",
+      ".gpt-codex/evidence/**",
+      ".gpt-codex/STATE.json",
+      "Framework continuity/publication required pure governance files"
+    ],
+    "excluded_paths": [
+      "src/**",
+      "tests/**",
+      "alembic/**",
+      "migrations/**",
+      "database/**",
+      "app/**",
+      "templates/**",
+      "static/**",
+      "pyproject.toml",
+      "requirements*.txt",
+      "Dockerfile",
+      "docker-compose*",
+      "all business code",
+      "all business tests",
+      "all business database schemas and migrations",
+      "all business dependencies",
+      "all UI implementation",
+      "all Collector implementation",
+      "all Framework source files"
+    ]
+  },
+  "acceptance": [
+    "The approved Data Collection implementation plan is persisted at the required path with status DATA_COLLECTION_IMPLEMENTATION_PLAN_APPROVED.",
+    "The plan references the approved Data Collection design spec and exact PROJECT_CONTEXT_ID.",
+    "All 20 approved tasks, Plan B, Plan C, WU-DC-CORE-01 through WU-DC-CORE-04, global constraints, approval gate, self-review, verification, publication, hard stop, and return requirements are preserved.",
+    "The plan contains no placeholder markers and the placeholder scan returns zero matches.",
+    "The nine tracked-fund investment-plan rules, DAILY versus TRADING_DAY distinction, mandatory confirmed_units, QDII pending support, independent gates, Raw Evidence, Canonical Snapshot, and ABC quote safety boundary are present.",
+    "validate_project.py returns RESULT: PASS before and after publication.",
+    "Only the approved plan and pure governance files are changed; no business implementation is created and no dependency is installed.",
+    "Publication is bounded to Work Commit W, management-only Publication Commit P, and live verification on origin/main.",
+    "Final STATE remains AUTHORIZED with active_work_unit null, blockers empty, sync_status SYNCED, and the required next_action."
+  ],
+  "selected_extensions": {
+    "skills": [
+      "github-project-continuity",
+      "verification",
+      "handoff",
+      "git-basic"
+    ],
+    "guardrails": [
+      "universal-safety",
+      "cross-project-context-binding",
+      "github-repository-binding"
+    ],
+    "fitness": []
+  },
+  "permissions": {
+    "project_write": "approved_plan_and_governance_paths_only",
+    "framework_read": "ALLOW",
+    "framework_write": "DENY",
+    "business_code_write": "DENY",
+    "business_test_write": "DENY",
+    "database_schema_write": "DENY",
+    "dependency_selection": "DENY",
+    "dependency_installation": "DENY",
+    "data_collection_implementation": "DENY",
+    "git_remote_write": "main_only_no_force_no_history_rewrite"
+  },
+  "state": "AUTHORIZED",
+  "active_work_unit_during_execution": "WORK-DATA-COLLECTION-IMPLEMENTATION-PLAN-001",
+  "final_active_work_unit": null,
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json"
+  ],
+  "completion_gate": "GPT_DECISION"
+}
