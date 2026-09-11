@@ -1,0 +1,56 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "project_name": "Asset-management",
+  "github": {
+    "repository_id": "1366683980",
+    "repository_full_name": "xqc2098948451-byte/Asset-management",
+    "default_branch": "main"
+  },
+  "governance_profile": "STANDARD",
+  "framework": {
+    "adopted_version": "2.2.1",
+    "last_evaluated_version": "2.2.1",
+    "evaluation_result": "ADOPTED"
+  },
+  "roots": {
+    "project_role": "AUTHORITATIVE",
+    "framework_role": "ADVISORY",
+    "framework_kernel_access": "READ_ONLY",
+    "framework_builtins_access": "READ_ONLY",
+    "harvest_namespace": "PRJ-ASSET-MGMT-20260912-001"
+  },
+  "extensions": {
+    "skills": [],
+    "guardrails": [
+      {
+        "id": "cross-project-context-binding",
+        "source": "builtin",
+        "enabled": true,
+        "version": "1.0.0",
+        "reason": "bind GPT instructions and Codex returns to one project identity",
+        "adoption": "COPIED_SNAPSHOT",
+        "installed_path": ".gpt-codex/extensions/guardrails/cross-project-context-binding",
+        "source_framework_version": "2.1.0",
+        "source_checksum": "273302fdaf953030f929588c285d012188dbf6d04c48506c891e0daad313f250"
+      }
+    ],
+    "fitness": []
+  },
+  "permissions": {
+    "production_access": "DENY",
+    "destructive_operations": "APPROVAL_REQUIRED",
+    "framework_kernel_write": "DENY",
+    "framework_builtin_write": "DENY",
+    "harvest_own_namespace_write": "ALLOW",
+    "harvest_other_namespace_write": "DENY"
+  },
+  "complexity": {
+    "default_decision": "DO_NOT_ADD",
+    "reuse_before_extension": true,
+    "degrade_before_extend": true,
+    "generalize_after_repetition": true
+  }
+}
