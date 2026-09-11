@@ -1,0 +1,61 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "work_unit_id": "WORK-DATA-COLLECTION-DESIGN-001",
+  "goal": "Persist the user-approved Data Collection module design as the authoritative module specification without implementing business code.",
+  "scope": {
+    "owned_paths": [
+      "docs/superpowers/specs/2026-09-12-data-collection-design.md",
+      ".gpt-codex/work/**",
+      ".gpt-codex/evidence/**",
+      ".gpt-codex/STATE.json",
+      "Framework continuity/publication required pure governance files"
+    ],
+    "excluded_paths": [
+      "src/**",
+      "app/**",
+      "tests/**",
+      "database/**",
+      "migrations/**",
+      "all business implementation directories",
+      "all Framework source files"
+    ]
+  },
+  "acceptance": [
+    "The approved Data Collection design is persisted with status DATA_COLLECTION_DESIGN_APPROVED.",
+    "The specification contains no TBD, TODO, PLACEHOLDER, or 待定 markers.",
+    "All nine tracked-fund investment-plan rules are present and accurate.",
+    "confirmed_units is mandatory for monthly confirmation and China-market non-trading-day preference is explicit.",
+    "Bond scope, authority separation, independent Quality/Freshness/Reconciliation gates, and non-goals are explicit.",
+    "validate_project.py returns RESULT: PASS before and after publication.",
+    "Publication is management-only, live-verified on origin/main, and no business implementation is created."
+  ],
+  "selected_extensions": {
+    "skills": [
+      "github-project-continuity",
+      "verification",
+      "git-basic"
+    ],
+    "guardrails": [
+      "github-repository-binding",
+      "cross-project-context-binding"
+    ],
+    "fitness": []
+  },
+  "permissions": {
+    "project_write": "approved_spec_and_governance_paths_only",
+    "framework_read": "ALLOW",
+    "framework_write": "DENY",
+    "business_code_write": "DENY",
+    "database_schema_write": "DENY",
+    "dependency_selection": "DENY",
+    "data_collection_implementation": "DENY",
+    "git_remote_write": "main_only_no_force_no_history_rewrite"
+  },
+  "state": "AUTHORIZED",
+  "basis_state_revision": 2,
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json"
+  ]
+}

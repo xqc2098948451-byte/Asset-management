@@ -1,0 +1,62 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "evidence_id": "EVIDENCE-DATA-COLLECTION-DESIGN-001",
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "work_unit_id": "WORK-DATA-COLLECTION-DESIGN-001",
+  "source": "TOOL_OBSERVED",
+  "subject": "data-collection-design",
+  "state_revision": 2,
+  "identity_binding": {
+    "type": "PROJECT_CONTEXT_ID",
+    "value": "43e85b1a-131b-4897-aa89-9b250d59fde0"
+  },
+  "result": "PASS",
+  "artifact_refs": [
+    "docs/superpowers/specs/2026-09-12-data-collection-design.md",
+    ".gpt-codex/work/WORK-DATA-COLLECTION-DESIGN-001.json",
+    ".gpt-codex/CONTROL.json",
+    ".gpt-codex/STATE.json",
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json"
+  ],
+  "observed_at": "2026-09-12T06:47:54+08:00",
+  "framework_version": "2.2.1",
+  "framework_head_sha": "858dedb266c8e084d83433f94e61ddd7fa1e4cb9",
+  "base_commit": "a669d54b3632daa32c5a167617a0498b2203162e",
+  "repository_id": "1366683980",
+  "repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "spec_sha256": "14D98BC938D35460305328790E164904B354E16B89EE7A3C6DD1A279443DEFF1",
+  "spec_status": "DATA_COLLECTION_DESIGN_APPROVED",
+  "placeholder_scan": {
+    "patterns": ["TBD", "TODO", "PLACEHOLDER", "待定"],
+    "match_count": 0,
+    "result": "PASS"
+  },
+  "fund_baseline_check": {
+    "019172": "TRADING_DAY 10 RMB ENABLED",
+    "017641": "TRADING_DAY 10 RMB ENABLED",
+    "016452": "DAILY 40 RMB ENABLED",
+    "021707": "DAILY 10 RMB ENABLED",
+    "000307": "DAILY 10 RMB ENABLED",
+    "020602": "TRADING_DAY 10 RMB ENABLED",
+    "161130": "NONE 0 RMB HELD_ONLY",
+    "161125": "NONE 0 RMB HELD_ONLY",
+    "002963": "NONE 0 RMB HELD_ONLY",
+    "result": "PASS"
+  },
+  "validate_command": "python D:\\资产管理\\_gpt-codex-framework-readonly\\.gpt-codex\\scripts\\validate_project.py .",
+  "validator_output": [
+    "RESULT: PASS",
+    "PROJECT: PRJ-ASSET-MGMT-20260912-001",
+    "STATE: AUTHORIZED@revision-2",
+    "PROJECT_CONTEXT_BINDING: PASS"
+  ],
+  "publication": {
+    "status": "PENDING_COMMIT_AND_LIVE_REMOTE_VERIFICATION",
+    "force_push": false,
+    "history_rewrite": false,
+    "other_branches_modified": false
+  },
+  "notes": "User-approved design specification only. No Data Collection implementation, business code, database schema, Collector, UI, tests, dependencies, or application scaffold was created."
+}
