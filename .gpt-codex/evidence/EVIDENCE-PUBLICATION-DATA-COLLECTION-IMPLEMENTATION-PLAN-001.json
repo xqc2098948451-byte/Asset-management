@@ -1,0 +1,47 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "evidence_id": "EVIDENCE-PUBLICATION-DATA-COLLECTION-IMPLEMENTATION-PLAN-001",
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-IMPLEMENTATION-PLAN-001",
+  "source": "TOOL_OBSERVED",
+  "subject": "data-collection-implementation-plan-publication",
+  "state_revision": 4,
+  "result": "PASS",
+  "observed_at": "2026-09-12T07:06:42+08:00",
+  "framework_version": "2.2.1",
+  "repository_id": "1366683980",
+  "repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "base_sha": "1be5b3ad63d5f4290f922621719b898502ac8e86",
+  "work_commit_sha": "0afe354208722068f240e8ec6a6572d3e7be6b83",
+  "work_commit_parent_sha": "1be5b3ad63d5f4290f922621719b898502ac8e86",
+  "work_commit_remote_verification": "VERIFIED",
+  "work_commit_remote_head_sha": "0afe354208722068f240e8ec6a6572d3e7be6b83",
+  "work_commit_push_status": "SUCCESS",
+  "publication": {
+    "protocol": "W -> P -> live observation",
+    "publication_commit_is_management_only": true,
+    "publication_commit_self_sha_written": false,
+    "force_push": false,
+    "history_rewrite": false,
+    "other_branches_modified": false,
+    "result_ref": ".gpt-codex/evidence/RESULT-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json"
+  },
+  "changed_in_work_commit": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
+    ".gpt-codex/work/WORK-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
+    "docs/superpowers/plans/2026-09-12-data-collection-implementation.md"
+  ],
+  "changed_in_publication_commit": [
+    ".gpt-codex/STATE.json",
+    ".gpt-codex/evidence/EVIDENCE-PUBLICATION-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
+    ".gpt-codex/evidence/RESULT-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json"
+  ],
+  "no_business_implementation": true,
+  "no_dependency_installed": true,
+  "blockers": [],
+  "deviations": [],
+  "notes": "W was pushed and independently verified before the management-only P was created. The final P head is intentionally verified by a separate live remote observation and is not self-asserted inside P."
+}

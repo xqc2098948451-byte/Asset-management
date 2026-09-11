@@ -2,21 +2,23 @@
   "kernel_version": "2.0.0",
   "schema_version": 1,
   "project_id": "PRJ-ASSET-MGMT-20260912-001",
-  "revision": 3,
+  "revision": 4,
   "state": "AUTHORIZED",
   "active_work_unit": null,
   "blockers": [],
   "reconciliation": null,
   "evidence_refs": [
     ".gpt-codex/evidence/EVIDENCE-GOVERNANCE-BOOTSTRAP-001.json",
-    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json"
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json",
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
+    ".gpt-codex/evidence/EVIDENCE-PUBLICATION-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json"
   ],
   "continuity": {
     "current_remote_ref": "refs/heads/main",
-    "latest_verified_remote_sha": "424447ad1906f5e65e8add38372dbf56018010ed",
-    "latest_synced_state_revision": 3,
-    "last_verified_result_ref": ".gpt-codex/evidence/RESULT-DATA-COLLECTION-DESIGN-001.json",
+    "latest_verified_remote_sha": "0afe354208722068f240e8ec6a6572d3e7be6b83",
+    "latest_synced_state_revision": 4,
+    "last_verified_result_ref": ".gpt-codex/evidence/RESULT-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
     "sync_status": "SYNCED"
   },
-  "next_action": "Create the Data Collection implementation plan from the approved specification; do not implement business code until that plan is separately approved."
+  "next_action": "Begin WU-DC-CORE-01 only after GPT independently verifies the approved implementation-plan publication; no later Data Collection work unit is authorized yet."
 }
