@@ -1,0 +1,64 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-GOVERNANCE-BOOTSTRAP-001",
+  "extension": {
+    "kind": "SKILL",
+    "id": "github-project-continuity",
+    "version": "1.0.0"
+  },
+  "status": "PASS",
+  "source_project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "source_project_name": "Asset-management",
+  "framework_version": "2.2.1",
+  "source_github_repository_id": "1366683980",
+  "source_github_repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "local_head_sha": "d7562972b012dface319ffe874f0d5b08bfacc96",
+  "remote_head_sha": "d7562972b012dface319ffe874f0d5b08bfacc96",
+  "verified_baseline_sha": "d7562972b012dface319ffe874f0d5b08bfacc96",
+  "sync_status": "SYNCED",
+  "push_status": "SUCCESS",
+  "remote_verification": "VERIFIED",
+  "publication_authority": "CONFIRMED_PUBLICATION",
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-GOVERNANCE-BOOTSTRAP-001.json"
+  ],
+  "return_to_gpt_required": true,
+  "state_revision": 2,
+  "execution": "COMPLETED",
+  "changed": [
+    ".gpt-codex/evidence/RESULT-GOVERNANCE-BOOTSTRAP-001.json",
+    ".gpt-codex/evidence/EVIDENCE-GOVERNANCE-BOOTSTRAP-001.json",
+    ".gpt-codex/STATE.json"
+  ],
+  "verify": [
+    "validate_project.py PASS",
+    "remote W live verification PASS",
+    "repository binding PASS"
+  ],
+  "deviations": [],
+  "git": {
+    "base_sha": "6ec7850454f0e6e0cd8805c9baff4abfc246e1ea",
+    "implementation_sha": "d7562972b012dface319ffe874f0d5b08bfacc96"
+  },
+  "parallel_batch": "NONE",
+  "execution_unit": "WORK-GOVERNANCE-BOOTSTRAP-001",
+  "observability_fitness": [
+    "NONE"
+  ],
+  "extension_evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-GOVERNANCE-BOOTSTRAP-001.json"
+  ],
+  "state_transition_request": {
+    "from": "AUTHORIZED@revision-1",
+    "to": "AUTHORIZED@revision-2",
+    "expected_revision": 1
+  },
+  "blockers": [],
+  "completion_gate": "GPT_DECISION",
+  "user_approval_required": false,
+  "next_gpt_action": "Review the publication reconciliation evidence and determine the next authorized action."
+}

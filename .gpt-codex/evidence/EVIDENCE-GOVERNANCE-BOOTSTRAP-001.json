@@ -21,7 +21,8 @@
     ".gpt-codex/FRAMEWORK_COMPATIBILITY_REPORT.md",
     ".gpt-codex/GOVERNANCE_COMPILE_REPORT.md",
     ".gpt-codex/extensions/skills",
-    ".gpt-codex/extensions/guardrails"
+    ".gpt-codex/extensions/guardrails",
+    ".gpt-codex/evidence/RESULT-GOVERNANCE-BOOTSTRAP-001.json"
   ],
   "observed_at": "2026-09-12T05:22:59+08:00",
   "framework_version": "2.2.1",
@@ -55,10 +56,15 @@
     "fitness": []
   },
   "publication": {
-    "status": "PENDING_COMMIT_AND_LIVE_REMOTE_VERIFICATION",
+    "status": "WORK_COMMIT_W_LIVE_VERIFIED",
+    "work_commit": "d7562972b012dface319ffe874f0d5b08bfacc96",
+    "remote_head_sha": "d7562972b012dface319ffe874f0d5b08bfacc96",
+    "remote_verification": "VERIFIED",
+    "push_status": "SUCCESS",
     "force_push": false,
     "history_rewrite": false,
-    "other_branches_modified": false
+    "other_branches_modified": false,
+    "result_ref": ".gpt-codex/evidence/RESULT-GOVERNANCE-BOOTSTRAP-001.json"
   },
-  "notes": "Governance-only bootstrap. No project-local extension, business code, Data Collection code, application scaffolding, or business database schema was created."
+  "notes": "Original governance validation facts are preserved. W was pushed and live-observed on origin/main; publication reconciliation records no force push, no history rewrite, and no other branch modification. No project-local extension, business code, Data Collection code, application scaffolding, or business database schema was created."
 }
