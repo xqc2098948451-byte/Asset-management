@@ -1,2 +1,1 @@
 """Data Collection bounded context."""
-
