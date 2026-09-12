@@ -2,9 +2,9 @@
   "kernel_version": "2.0.0",
   "schema_version": 1,
   "project_id": "PRJ-ASSET-MGMT-20260912-001",
-  "revision": 8,
-  "state": "AUTHORIZED",
-  "active_work_unit": null,
+  "revision": 9,
+  "state": "ACTIVE",
+  "active_work_unit": "WORK-DATA-COLLECTION-CORE-01-CORRECTION-01",
   "blockers": [],
   "reconciliation": null,
   "evidence_refs": [
@@ -22,5 +22,5 @@
     "last_verified_result_ref": ".gpt-codex/evidence/RESULT-DATA-COLLECTION-CORE-01.json",
     "sync_status": "SYNCED"
   },
-  "next_action": "Return WU-DC-CORE-01 to GPT for independent verification; do not begin WU-DC-CORE-02 until GPT explicitly authorizes it."
+  "next_action": "Complete only WU-DATA-COLLECTION-CORE-01-CORRECTION-01, then publish W2/P2 and return the correction to GPT for independent verification; do not begin WU-DC-CORE-02."
 }

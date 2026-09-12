@@ -13,7 +13,7 @@ SOURCE_POLICIES: Mapping[str, SourcePolicy] = {
     "CHINAMONEY_BOND_MASTER": SourcePolicy.MANUAL_DOWNLOAD,
     "ABC_BOND_PRODUCT_UNIVERSE": SourcePolicy.MANUAL_DOWNLOAD,
     "ABC_DAILY_QUOTES": SourcePolicy.MANUAL_DOWNLOAD,
-    "ABC_RISK_LEVEL": SourcePolicy.OPTIONAL,
+    "ABC_RISK_LEVEL": SourcePolicy.DISABLED,
     "ABC_ACCOUNT_STATEMENT": SourcePolicy.MANUAL_DOWNLOAD,
     "CN_TRADING_CALENDAR": SourcePolicy.MANUAL_DOWNLOAD,
 }
@@ -42,7 +42,18 @@ def seed_registries(engine: Engine) -> None:
                 source_code=source_code,
                 policy=policy.value,
             )
-            connection.execute(statement.on_conflict_do_nothing(index_elements=["source_code"]))
+            if source_code == "ABC_RISK_LEVEL":
+                connection.execute(
+                    statement.on_conflict_do_update(
+                        index_elements=["source_code"],
+                        set_={"policy": policy.value},
+                        where=data_source.c.policy == "OPTIONAL",
+                    )
+                )
+            else:
+                connection.execute(
+                    statement.on_conflict_do_nothing(index_elements=["source_code"])
+                )
 
         for instrument_code in TRACKED_INSTRUMENT_CODES:
             statement = insert(tracked_instrument).values(

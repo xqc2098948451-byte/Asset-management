@@ -1,0 +1,49 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-CORE-01-CORRECTION-01",
+  "goal": "Correct the approved data-source acquisition policy vocabulary and narrowly repair the legacy ABC_RISK_LEVEL OPTIONAL value without starting WU-DC-CORE-02 or any later capability.",
+  "basis_state_revision": 8,
+  "authorized_tasks": [
+    "Correct SourcePolicy to exactly AUTO_ALLOWED, MANUAL_DOWNLOAD, MANUAL_INPUT, DISABLED",
+    "Seed ABC_RISK_LEVEL with DISABLED",
+    "Repair only an existing ABC_RISK_LEVEL policy of OPTIONAL to DISABLED",
+    "Add PostgreSQL integration coverage for repair idempotency and preservation of non-legacy policy values"
+  ],
+  "scope": {
+    "owned_paths": [
+      "src/asset_management/data_collection/domain/enums.py",
+      "src/asset_management/data_collection/adapters/database/registry.py",
+      "tests/integration/data_collection/test_registry.py",
+      ".gpt-codex/work/WORK-DATA-COLLECTION-CORE-01-CORRECTION-01.json",
+      ".gpt-codex/evidence/**",
+      ".gpt-codex/STATE.json"
+    ],
+    "excluded_paths": [
+      "all Task 6+ behavior",
+      "UI",
+      "collectors",
+      "bank or broker login",
+      "automatic trading",
+      "Portfolio Ledger",
+      "Valuation",
+      "Risk",
+      "Rebalance",
+      "Reporting"
+    ]
+  },
+  "permissions": {
+    "project_write": "authorized_paths_only",
+    "business_code_write": "CORRECTION_ONLY",
+    "business_test_write": "CORRECTION_ONLY",
+    "database_schema_write": "DENY",
+    "financial_account_access": "DENY",
+    "automatic_trading": "DENY",
+    "git_remote_write": "main_only_no_force_no_history_rewrite"
+  },
+  "state": "ACTIVE",
+  "evidence_refs": [],
+  "completion_gate": "GPT_DECISION"
+}
