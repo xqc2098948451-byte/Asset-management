@@ -1,0 +1,72 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-CORE-01-CORRECTION-01",
+  "extension": {
+    "kind": "SKILL",
+    "id": "github-project-continuity",
+    "version": "1.0.0"
+  },
+  "status": "PASS",
+  "source_project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "source_project_name": "Asset-management",
+  "framework_version": "2.2.1",
+  "source_github_repository_id": "1366683980",
+  "source_github_repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "local_head_sha": "3cf6ff19d07ef451b674b6cef0bd50d826eed39b",
+  "remote_head_sha": "3cf6ff19d07ef451b674b6cef0bd50d826eed39b",
+  "verified_baseline_sha": "3cf6ff19d07ef451b674b6cef0bd50d826eed39b",
+  "sync_status": "SYNCED",
+  "push_status": "SUCCEEDED",
+  "remote_verification": "VERIFIED",
+  "publication_authority": "CONFIRMED_PUBLICATION",
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-CORRECTION-01-FINAL.json"
+  ],
+  "return_to_gpt_required": true,
+  "state_revision": 10,
+  "execution": "COMPLETED",
+  "changed": [
+    "src/asset_management/data_collection/domain/enums.py",
+    "src/asset_management/data_collection/adapters/database/registry.py",
+    "tests/integration/data_collection/test_registry.py",
+    ".gpt-codex/work/WORK-DATA-COLLECTION-CORE-01-CORRECTION-01.json",
+    ".gpt-codex/STATE.json",
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-CORRECTION-01-FINAL.json",
+    ".gpt-codex/evidence/RESULT-DATA-COLLECTION-CORE-01-CORRECTION-01.json"
+  ],
+  "verify": [
+    "TDD RED/GREEN evidence PASS",
+    "pytest -v PASS: 20 passed",
+    "ruff check . PASS",
+    "mypy src PASS",
+    "Alembic upgrade/downgrade/upgrade PASS against PostgreSQL 16.15",
+    "git diff --check PASS",
+    "legacy OPTIONAL to DISABLED repair and idempotency PASS",
+    "non-legacy policy preservation PASS",
+    "scope scan PASS",
+    "W2 live remote verification PASS",
+    "no Task 6+ behavior PASS"
+  ],
+  "deviations": [
+    "Subagent-driven development was unavailable because no subagent dispatch interface was exposed; execution used inline TDD.",
+    "The test environment inherited PYTHONPATH from the prior implementation worktree; verification explicitly targeted the correction worktree src directory."
+  ],
+  "git": {
+    "base_sha": "f57f7e66ab522b0691d892c0eebb7ed2d8912e19",
+    "implementation_sha": "3cf6ff19d07ef451b674b6cef0bd50d826eed39b",
+    "p2_parent_sha": "3cf6ff19d07ef451b674b6cef0bd50d826eed39b",
+    "force_push": false,
+    "history_rewrite": false,
+    "other_branches_modified": false
+  },
+  "parallel_batch": "NONE",
+  "execution_unit": "WORK-DATA-COLLECTION-CORE-01-CORRECTION-01",
+  "observability_fitness": ["NONE"],
+  "completion_gate": "GPT_DECISION",
+  "user_approval_required": false,
+  "next_gpt_action": "Return WU-DC-CORE-01 correction to GPT for independent verification; do not begin WU-DC-CORE-02 until GPT explicitly authorizes it."
+}

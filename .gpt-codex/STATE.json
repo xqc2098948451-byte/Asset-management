@@ -2,9 +2,9 @@
   "kernel_version": "2.0.0",
   "schema_version": 1,
   "project_id": "PRJ-ASSET-MGMT-20260912-001",
-  "revision": 9,
-  "state": "ACTIVE",
-  "active_work_unit": "WORK-DATA-COLLECTION-CORE-01-CORRECTION-01",
+  "revision": 10,
+  "state": "AUTHORIZED",
+  "active_work_unit": null,
   "blockers": [],
   "reconciliation": null,
   "evidence_refs": [
@@ -13,14 +13,16 @@
     ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
     ".gpt-codex/evidence/EVIDENCE-PUBLICATION-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
     ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01.json",
-    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-FINAL.json"
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-FINAL.json",
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-CORRECTION-01-FINAL.json",
+    ".gpt-codex/evidence/RESULT-DATA-COLLECTION-CORE-01-CORRECTION-01.json"
   ],
   "continuity": {
     "current_remote_ref": "refs/heads/main",
-    "latest_verified_remote_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
-    "latest_synced_state_revision": 8,
-    "last_verified_result_ref": ".gpt-codex/evidence/RESULT-DATA-COLLECTION-CORE-01.json",
+    "latest_verified_remote_sha": "3cf6ff19d07ef451b674b6cef0bd50d826eed39b",
+    "latest_synced_state_revision": 10,
+    "last_verified_result_ref": ".gpt-codex/evidence/RESULT-DATA-COLLECTION-CORE-01-CORRECTION-01.json",
     "sync_status": "SYNCED"
   },
-  "next_action": "Complete only WU-DATA-COLLECTION-CORE-01-CORRECTION-01, then publish W2/P2 and return the correction to GPT for independent verification; do not begin WU-DC-CORE-02."
+  "next_action": "Return WU-DC-CORE-01 correction to GPT for independent verification; do not begin WU-DC-CORE-02 until GPT explicitly authorizes it."
 }

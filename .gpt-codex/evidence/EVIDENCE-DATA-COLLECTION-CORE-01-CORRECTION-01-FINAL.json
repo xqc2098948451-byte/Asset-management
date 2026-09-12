@@ -1,0 +1,90 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "evidence_id": "EVIDENCE-DATA-COLLECTION-CORE-01-CORRECTION-01-FINAL",
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-CORE-01-CORRECTION-01",
+  "source": "TOOL_OBSERVED",
+  "subject": "data-collection-core-01-correction-01-final-verification",
+  "state_revision": 10,
+  "result": "PASS",
+  "observed_at": "2026-09-12T19:21:34+08:00",
+  "framework_version": "2.2.1",
+  "repository_id": "1366683980",
+  "repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "base_sha": "f57f7e66ab522b0691d892c0eebb7ed2d8912e19",
+  "work_commit_sha": "3cf6ff19d07ef451b674b6cef0bd50d826eed39b",
+  "work_commit_parent_sha": "f57f7e66ab522b0691d892c0eebb7ed2d8912e19",
+  "work_remote_verification": "VERIFIED",
+  "work_remote_head_sha": "3cf6ff19d07ef451b674b6cef0bd50d826eed39b",
+  "root_cause": "The implementation conflated optional enrichment with source acquisition policy by representing OPTIONAL as a SourcePolicy and seeding ABC_RISK_LEVEL with it. The approved SourcePolicy vocabulary contains exactly four values, while optional risk-level enrichment has no approved stable public source and must therefore be DISABLED.",
+  "tdd": {
+    "red": "python -m pytest -v tests/integration/data_collection/test_registry.py -> 3 failed, 2 passed; failures were the unexpected OPTIONAL enum member, ABC_RISK_LEVEL seeded as OPTIONAL instead of DISABLED, and legacy OPTIONAL not repaired.",
+    "green": "python -m pytest -v tests/integration/data_collection/test_registry.py -> 5 passed",
+    "legacy_repair": "PostgreSQL integration test inserted policy string OPTIONAL directly, ran corrected seed twice, and observed ABC_RISK_LEVEL = DISABLED; rerun was idempotent.",
+    "preservation": "PostgreSQL integration test observed an existing ABC_RISK_LEVEL = MANUAL_INPUT remained MANUAL_INPUT after seeding."
+  },
+  "approved_source_policy_values": [
+    "AUTO_ALLOWED",
+    "MANUAL_DOWNLOAD",
+    "MANUAL_INPUT",
+    "DISABLED"
+  ],
+  "source_policies": {
+    "CBOND_VALUATION": "MANUAL_DOWNLOAD",
+    "CBOND_YIELD_CURVE": "MANUAL_DOWNLOAD",
+    "CHINAMONEY_BOND_MASTER": "MANUAL_DOWNLOAD",
+    "ABC_BOND_PRODUCT_UNIVERSE": "MANUAL_DOWNLOAD",
+    "ABC_DAILY_QUOTES": "MANUAL_DOWNLOAD",
+    "ABC_ACCOUNT_STATEMENT": "MANUAL_DOWNLOAD",
+    "CN_TRADING_CALENDAR": "MANUAL_DOWNLOAD",
+    "ABC_RISK_LEVEL": "DISABLED"
+  },
+  "postgresql": {
+    "database": "asset_management_test",
+    "version": "16.15",
+    "business_schemas": ["data_collection", "public"],
+    "data_collection_table_count": 16,
+    "tracked_instrument_count": 9
+  },
+  "verification": {
+    "pytest_v": "20 passed in 1.71s",
+    "ruff": "All checks passed!",
+    "mypy": "Success: no issues found in 17 source files",
+    "alembic_upgrade_downgrade_upgrade": "PASS",
+    "git_diff_check": "PASS",
+    "scope_scan": "NO_UNAUTHORIZED_BEHAVIOR_MATCHES",
+    "framework_validator": [
+      "RESULT: PASS",
+      "PROJECT: PRJ-ASSET-MGMT-20260912-001",
+      "STATE: AUTHORIZED@revision-10",
+      "PROJECT_CONTEXT_BINDING: PASS"
+    ]
+  },
+  "scope": {
+    "correction_only": true,
+    "task_6_plus_behavior": false,
+    "ui": false,
+    "collector": false,
+    "bank_broker_login": false,
+    "automatic_trading": false,
+    "portfolio_ledger": false,
+    "valuation": false,
+    "risk": false,
+    "rebalance": false,
+    "reporting": false,
+    "schema_changed": false,
+    "tracked_instrument_seeds_changed": false
+  },
+  "commit_set": ["3cf6ff19d07ef451b674b6cef0bd50d826eed39b"],
+  "return_to_gpt_required": true,
+  "completion_gate": "GPT_DECISION",
+  "deviations": [
+    "Subagent-driven development was unavailable because no subagent dispatch interface was exposed; execution used inline TDD.",
+    "The test environment inherited PYTHONPATH from the prior implementation worktree; verification was corrected to explicitly target this correction worktree's src directory before GREEN and final checks."
+  ],
+  "blockers": [],
+  "next_gpt_action": "Return WU-DC-CORE-01 correction to GPT for independent verification; do not begin WU-DC-CORE-02 until GPT explicitly authorizes it."
+}

@@ -43,7 +43,10 @@
     "automatic_trading": "DENY",
     "git_remote_write": "main_only_no_force_no_history_rewrite"
   },
-  "state": "ACTIVE",
-  "evidence_refs": [],
+  "state": "AUTHORIZED",
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-CORRECTION-01-FINAL.json",
+    ".gpt-codex/evidence/RESULT-DATA-COLLECTION-CORE-01-CORRECTION-01.json"
+  ],
   "completion_gate": "GPT_DECISION"
 }
