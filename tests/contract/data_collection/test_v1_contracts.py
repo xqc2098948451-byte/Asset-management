@@ -1,4 +1,4 @@
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime
 from decimal import Decimal
 
 import pytest
@@ -26,7 +26,7 @@ def test_monthly_anchor_serializes_stable_identity_and_decimal_values() -> None:
         anchor_id="anchor-1",
         instrument_code="019172",
         snapshot_as_of_date=date(2026, 8, 31),
-        confirmed_at=datetime(2026, 9, 5, 9, 0, tzinfo=timezone.utc),
+        confirmed_at=datetime(2026, 9, 5, 9, 0, tzinfo=UTC),
         confirmed_units=Decimal("12.3400000000"),
         account_value=Decimal("1234.5600000000"),
         pending_amount=Decimal("10.0000000000"),
@@ -48,9 +48,9 @@ def test_v1_contracts_require_their_identity_fields() -> None:
         MonthlyAccountAnchorV1(
             instrument_code="019172",
             snapshot_as_of_date=date(2026, 8, 31),
-            confirmed_at=datetime(2026, 9, 5, tzinfo=timezone.utc),
-            confirmed_units=Decimal("1"),
-            account_value=Decimal("1"),
+            confirmed_at=datetime(2026, 9, 5, tzinfo=UTC),
+            confirmed_units=Decimal(1),
+            account_value=Decimal(1),
             quality_status=QualityStatus.VALID,
             reconciliation_status=ReconciliationStatus.RECONCILED,
         )
@@ -62,7 +62,7 @@ def test_invalid_enum_value_is_rejected() -> None:
             snapshot_id="plan-1",
             instrument_code="019172",
             schedule_type="NOT_A_SCHEDULE",
-            amount=Decimal("10"),
+            amount=Decimal(10),
             status=PlanStatus.ENABLED,
             effective_from=date(2026, 9, 1),
         )
@@ -75,11 +75,12 @@ def test_estimated_and_confirmed_units_are_distinct_fields() -> None:
         observation_type="OFFICIAL_NAV",
         value=Decimal("1.2345"),
         as_of_date=date(2026, 9, 1),
-        collected_at=datetime(2026, 9, 2, tzinfo=timezone.utc),
+        collected_at=datetime(2026, 9, 2, tzinfo=UTC),
         quality_status=QualityStatus.VALID,
         freshness_status=FreshnessStatus.FRESH,
     )
 
+    assert observation.value == Decimal("1.2345")
     assert "estimated_units" not in ValidatedMarketObservationV1.model_fields
     assert "confirmed_units" not in ValidatedMarketObservationV1.model_fields
 
