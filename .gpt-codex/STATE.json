@@ -2,16 +2,19 @@
   "kernel_version": "2.0.0",
   "schema_version": 1,
   "project_id": "PRJ-ASSET-MGMT-20260912-001",
-  "revision": 5,
-  "state": "ACTIVE",
+  "revision": 6,
+  "state": "BLOCKED",
   "active_work_unit": "WORK-DATA-COLLECTION-CORE-01",
-  "blockers": [],
+  "blockers": [
+    "ENVIRONMENT_BLOCKED_POSTGRESQL"
+  ],
   "reconciliation": null,
   "evidence_refs": [
     ".gpt-codex/evidence/EVIDENCE-GOVERNANCE-BOOTSTRAP-001.json",
     ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-DESIGN-001.json",
     ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
-    ".gpt-codex/evidence/EVIDENCE-PUBLICATION-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json"
+    ".gpt-codex/evidence/EVIDENCE-PUBLICATION-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01.json"
   ],
   "continuity": {
     "current_remote_ref": "refs/heads/main",
@@ -20,5 +23,5 @@
     "last_verified_result_ref": ".gpt-codex/evidence/RESULT-DATA-COLLECTION-IMPLEMENTATION-PLAN-001.json",
     "sync_status": "SYNC_PENDING"
   },
-  "next_action": "Execute authorized WU-DC-CORE-01 Tasks 1–5 with strict TDD; do not begin later Data Collection tasks."
+  "next_action": "Provide a real PostgreSQL test environment, then resume WU-DC-CORE-01 at Task 3; do not begin later Data Collection tasks."
 }
