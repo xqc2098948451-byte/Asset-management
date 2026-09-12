@@ -1,0 +1,110 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-CORE-01",
+  "goal": "Implement Data Collection Core Tasks 1–5 from the approved implementation plan using strict TDD, without starting any later Data Collection capability.",
+  "basis_state_revision": 4,
+  "authorized_tasks": [
+    "Task 1 — Application Scaffold",
+    "Task 2 — Domain Enums and Versioned Contracts",
+    "Task 3 — PostgreSQL Data Collection Schema",
+    "Task 4 — Source Registry and Tracked Instruments",
+    "Task 5 — Raw Evidence Store"
+  ],
+  "scope": {
+    "owned_paths": [
+      "pyproject.toml",
+      "src/asset_management/__init__.py",
+      "src/asset_management/config.py",
+      "src/asset_management/app.py",
+      "src/asset_management/data_collection/__init__.py",
+      "src/asset_management/data_collection/domain/**",
+      "src/asset_management/data_collection/contracts/v1/**",
+      "src/asset_management/data_collection/ports/**",
+      "src/asset_management/data_collection/adapters/database/**",
+      "src/asset_management/data_collection/adapters/filesystem_raw_store.py",
+      "alembic/**",
+      "tests/conftest.py",
+      "tests/test_app_boot.py",
+      "tests/unit/data_collection/**",
+      "tests/contract/data_collection/**",
+      "tests/integration/data_collection/**",
+      ".gpt-codex/work/**",
+      ".gpt-codex/evidence/**",
+      ".gpt-codex/STATE.json"
+    ],
+    "excluded_paths": [
+      "investment plan application services",
+      "planned contribution generator",
+      "Quality Gate implementation",
+      "Freshness Gate implementation",
+      "Reconciliation implementation",
+      "MonthlyAccountAnchor implementation",
+      "Canonical Snapshot implementation",
+      "Outbox implementation",
+      "ABC Quote Universe implementation",
+      "web UI",
+      "templates",
+      "Worker jobs",
+      "real source collectors",
+      "ChinaBond parser",
+      "ChinaMoney parser",
+      "ABC parser",
+      "fund/ETF scraper",
+      "gold scraper",
+      "bank login",
+      "broker login",
+      "automatic trading",
+      "Portfolio Ledger",
+      "Valuation",
+      "Risk",
+      "Rebalance",
+      "Reporting",
+      "all Task 6+ behavior"
+    ]
+  },
+  "acceptance": [
+    "Task 1 application scaffold boots through create_app() and has no business route requirement.",
+    "Task 2 defines only approved enums and v1 contracts with Decimal financial values and distinct estimated_units and confirmed_units.",
+    "Task 3 creates only the data_collection PostgreSQL schema and approved internal table structures, using real PostgreSQL integration tests.",
+    "Task 4 seeds exactly the approved source policies and nine tracked instruments, all initially UNVERIFIED, without guessed metadata or network acquisition.",
+    "Task 5 provides a configuration-driven immutable SHA-256 RawEvidenceStore with filesystem adapter and database metadata consistency.",
+    "Every production behavior in Tasks 1–5 follows observed RED → minimal GREEN → focused verification.",
+    "No Task 6+ behavior, UI, Collector, financial login, or automatic trading is implemented.",
+    "Final publication passes the project validator and live remote verification."
+  ],
+  "selected_extensions": {
+    "skills": [
+      "github-project-continuity",
+      "verification",
+      "handoff",
+      "git-basic"
+    ],
+    "guardrails": [
+      "universal-safety",
+      "cross-project-context-binding",
+      "github-repository-binding"
+    ],
+    "fitness": []
+  },
+  "permissions": {
+    "project_write": "authorized_paths_only",
+    "framework_read": "ALLOW",
+    "framework_write": "DENY",
+    "business_code_write": "TASKS_1_TO_5_ONLY",
+    "business_test_write": "TASKS_1_TO_5_ONLY",
+    "database_schema_write": "DATA_COLLECTION_SCHEMA_ONLY",
+    "dependency_selection": "APPROVED_STACK_ONLY",
+    "dependency_installation": "APPROVED_TASKS_1_TO_5_ONLY",
+    "financial_account_access": "DENY",
+    "automatic_trading": "DENY",
+    "git_remote_write": "main_only_no_force_no_history_rewrite"
+  },
+  "state": "AUTHORIZED",
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01.json"
+  ],
+  "completion_gate": "GPT_DECISION"
+}
