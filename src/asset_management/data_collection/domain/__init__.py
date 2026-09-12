@@ -1,0 +1,2 @@
+"""Data Collection domain types."""
+

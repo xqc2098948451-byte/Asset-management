@@ -1,0 +1,81 @@
+from enum import StrEnum
+
+
+class SourcePolicy(StrEnum):
+    MANUAL_DOWNLOAD = "MANUAL_DOWNLOAD"
+    MANUAL_INPUT = "MANUAL_INPUT"
+    AUTO_ALLOWED = "AUTO_ALLOWED"
+    OPTIONAL = "OPTIONAL"
+    DISABLED = "DISABLED"
+
+
+class ScheduleType(StrEnum):
+    NONE = "NONE"
+    DAILY = "DAILY"
+    TRADING_DAY = "TRADING_DAY"
+    WEEKLY = "WEEKLY"
+    MONTHLY = "MONTHLY"
+
+
+class PlanStatus(StrEnum):
+    ENABLED = "ENABLED"
+    PAUSED = "PAUSED"
+    HELD_ONLY = "HELD_ONLY"
+
+
+class ContributionStatus(StrEnum):
+    PLANNED = "PLANNED"
+    EXPECTED = "EXPECTED"
+    PENDING_CONFIRMATION = "PENDING_CONFIRMATION"
+    PROVISIONAL = "PROVISIONAL"
+
+
+class QualityStatus(StrEnum):
+    VERIFIED = "VERIFIED"
+    VALID = "VALID"
+    SUSPECT = "SUSPECT"
+    CONFLICT = "CONFLICT"
+    INVALID = "INVALID"
+    QUARANTINED = "QUARANTINED"
+
+
+class FreshnessStatus(StrEnum):
+    FRESH = "FRESH"
+    STALE = "STALE"
+    EXPIRED = "EXPIRED"
+    UNKNOWN = "UNKNOWN"
+    MISSING = "MISSING"
+
+
+class ReconciliationStatus(StrEnum):
+    RECONCILED = "RECONCILED"
+    MINOR_DIFFERENCE = "MINOR_DIFFERENCE"
+    MATERIAL_DIFFERENCE = "MATERIAL_DIFFERENCE"
+    UNRESOLVED = "UNRESOLVED"
+
+
+class PortfolioConfidence(StrEnum):
+    CONFIRMED = "CONFIRMED"
+    MOSTLY_CONFIRMED = "MOSTLY_CONFIRMED"
+    ESTIMATED = "ESTIMATED"
+    INSUFFICIENT = "INSUFFICIENT"
+
+
+class CalendarAlignmentStatus(StrEnum):
+    ALIGNED = "ALIGNED"
+    PARTIALLY_ALIGNED = "PARTIALLY_ALIGNED"
+    MISALIGNED = "MISALIGNED"
+    UNKNOWN = "UNKNOWN"
+
+
+class QuoteAvailabilityStatus(StrEnum):
+    BUY_QUOTED = "BUY_QUOTED"
+    SELL_QUOTED = "SELL_QUOTED"
+    TWO_WAY_QUOTED = "TWO_WAY_QUOTED"
+    NO_CURRENT_QUOTE = "NO_CURRENT_QUOTE"
+
+
+class ConfirmationLevel(StrEnum):
+    CONFIRMED = "CONFIRMED"
+    ESTIMATED = "ESTIMATED"
+    UNKNOWN = "UNKNOWN"
