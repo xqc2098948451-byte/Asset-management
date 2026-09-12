@@ -1,0 +1,87 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-CORE-01",
+  "extension": {
+    "kind": "SKILL",
+    "id": "github-project-continuity",
+    "version": "1.0.0"
+  },
+  "status": "PASS",
+  "source_project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "source_project_name": "Asset-management",
+  "framework_version": "2.2.1",
+  "source_github_repository_id": "1366683980",
+  "source_github_repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "local_head_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
+  "remote_head_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
+  "verified_baseline_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
+  "sync_status": "SYNCED",
+  "push_status": "SUCCEEDED",
+  "remote_verification": "VERIFIED",
+  "publication_authority": "CONFIRMED_PUBLICATION",
+  "evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-FINAL.json"
+  ],
+  "return_to_gpt_required": true,
+  "state_revision": 8,
+  "execution": "COMPLETED",
+  "changed": [
+    ".gpt-codex/STATE.json",
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-FINAL.json",
+    ".gpt-codex/evidence/RESULT-DATA-COLLECTION-CORE-01.json"
+  ],
+  "verify": [
+    "Tasks 1–5 TDD RED/GREEN evidence PASS",
+    "pytest -v PASS: 17 passed",
+    "ruff check . PASS",
+    "mypy src PASS",
+    "Alembic upgrade/downgrade/upgrade PASS against PostgreSQL 16.15",
+    "git diff --check PASS",
+    "security and out-of-scope scan PASS",
+    "W live remote verification PASS",
+    "repository binding PASS",
+    "no Task 6+ behavior PASS"
+  ],
+  "deviations": [
+    "Subagent-driven development was unavailable because no subagent dispatch interface was exposed; execution used inline TDD.",
+    "A separate local blocker-record commit and focused corrective commits were retained; no published history was rewritten."
+  ],
+  "git": {
+    "base_sha": "504a9c811e8cec5244d15f383528a5bd39d43fa3",
+    "implementation_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
+    "commit_set": [
+      "76d57163998f9396ce47b575c01c3e94f7970e80",
+      "97351f588cdc3704537e6583de612b3b4b244e74",
+      "e6ee9666b606689cecd0cf36672faf4183cc8dda",
+      "d2f965a35f56fa64090162ef40a7f811dc252fb3",
+      "12965cf6b36306d64f719c97311900f08290e3b6",
+      "3df9e1e3fb240c42940c09c7af6f45da5561e82d",
+      "093e26b488f9a3f39340ab4f97793614f42bcc83",
+      "5133003b098389a0013eb162503555af696fb963",
+      "d9a244f5b7831bb8cf822a7194f4486c83f6090a",
+      "7379b1bba74a414d16963c92079ee43e240a17a1",
+      "9069b535e17978f08cc771b19d08ee962a30b8c4"
+    ]
+  },
+  "parallel_batch": "NONE",
+  "execution_unit": "WORK-DATA-COLLECTION-CORE-01",
+  "observability_fitness": [
+    "NONE"
+  ],
+  "extension_evidence_refs": [
+    ".gpt-codex/evidence/EVIDENCE-DATA-COLLECTION-CORE-01-FINAL.json"
+  ],
+  "state_transition_request": {
+    "from": "ACTIVE@revision-7",
+    "to": "AUTHORIZED@revision-8",
+    "expected_revision": 7
+  },
+  "blockers": [],
+  "completion_gate": "GPT_DECISION",
+  "user_approval_required": false,
+  "next_gpt_action": "Return WU-DC-CORE-01 to GPT for independent verification; do not begin WU-DC-CORE-02 until GPT explicitly authorizes it."
+}

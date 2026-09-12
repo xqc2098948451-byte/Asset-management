@@ -1,0 +1,125 @@
+{
+  "kernel_version": "2.0.0",
+  "schema_version": 1,
+  "evidence_id": "EVIDENCE-DATA-COLLECTION-CORE-01-FINAL",
+  "project_id": "PRJ-ASSET-MGMT-20260912-001",
+  "project_context_id": "43e85b1a-131b-4897-aa89-9b250d59fde0",
+  "work_unit_id": "WORK-DATA-COLLECTION-CORE-01",
+  "source": "TOOL_OBSERVED",
+  "subject": "data-collection-core-01-final-verification",
+  "state_revision": 8,
+  "result": "PASS",
+  "observed_at": "2026-09-12T19:00:01+08:00",
+  "framework_version": "2.2.1",
+  "repository_id": "1366683980",
+  "repository_full_name": "xqc2098948451-byte/Asset-management",
+  "current_remote_ref": "refs/heads/main",
+  "base_sha": "504a9c811e8cec5244d15f383528a5bd39d43fa3",
+  "work_commit_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
+  "work_commit_parent_sha": "7379b1bba74a414d16963c92079ee43e240a17a1",
+  "work_remote_verification": "VERIFIED",
+  "work_remote_head_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
+  "postgresql": {
+    "database": "asset_management_test",
+    "version": "16.15",
+    "business_schemas": ["data_collection"],
+    "data_collection_table_count": 16
+  },
+  "tdd": {
+    "task_1": {
+      "red": "python -m pytest tests/test_app_boot.py -v -> ModuleNotFoundError: No module named 'asset_management'",
+      "green": "python -m pytest tests/test_app_boot.py -v -> 1 passed"
+    },
+    "task_2": {
+      "red": "python -m pytest tests/contract/data_collection/test_v1_contracts.py -v -> ModuleNotFoundError: No module named 'asset_management.data_collection'",
+      "green": "python -m pytest tests/contract/data_collection/test_v1_contracts.py -v -> 5 passed"
+    },
+    "task_3": {
+      "red": "python -m pytest tests/integration/data_collection/test_schema.py -v -> Alembic script path does not exist",
+      "green": "python -m pytest tests/integration/data_collection/test_schema.py -v -> 5 passed"
+    },
+    "task_4": {
+      "red": "python -m pytest tests/integration/data_collection/test_registry.py -v -> registry module missing",
+      "green": "python -m pytest tests/integration/data_collection/test_registry.py -v -> 2 passed"
+    },
+    "task_5": {
+      "red": "python -m pytest tests/unit/data_collection/test_raw_evidence_store.py -v -> raw evidence module missing",
+      "green": "python -m pytest tests/unit/data_collection/test_raw_evidence_store.py -v -> 4 passed"
+    }
+  },
+  "verification": {
+    "pytest_v": "17 passed in 1.58s",
+    "ruff": "All checks passed!",
+    "mypy": "Success: no issues found in 17 source files",
+    "alembic_upgrade_downgrade_upgrade": "PASS",
+    "git_diff_check": "PASS",
+    "security_scope_scan": "NO_UNAUTHORIZED_BEHAVIOR_MATCHES",
+    "framework_validator": [
+      "RESULT: PASS",
+      "PROJECT: PRJ-ASSET-MGMT-20260912-001",
+      "STATE: AUTHORIZED@revision-8",
+      "PROJECT_CONTEXT_BINDING: PASS"
+    ]
+  },
+  "dependencies": {
+    "installed_via": "python -m pip install -e .[dev]",
+    "lock_file": false,
+    "packages": {
+      "asset-management": "0.1.0",
+      "alembic": "1.20.0",
+      "fastapi": "0.128.2",
+      "pydantic": "2.13.4",
+      "psycopg": "3.3.5",
+      "psycopg-binary": "3.3.5",
+      "SQLAlchemy": "2.0.52",
+      "pytest": "9.1.1",
+      "mypy": "2.3.1",
+      "ruff": "0.16.7"
+    }
+  },
+  "scope": {
+    "tasks_1_to_5_only": true,
+    "task_6_plus_behavior": false,
+    "bank_broker_login": false,
+    "automatic_trading": false,
+    "real_public_site_collector": false,
+    "ui": false,
+    "portfolio_ledger": false,
+    "valuation": false,
+    "risk": false,
+    "rebalance": false,
+    "reporting": false
+  },
+  "commit_set": [
+    "76d57163998f9396ce47b575c01c3e94f7970e80",
+    "97351f588cdc3704537e6583de612b3b4b244e74",
+    "e6ee9666b606689cecd0cf36672faf4183cc8dda",
+    "d2f965a35f56fa64090162ef40a7f811dc252fb3",
+    "12965cf6b36306d64f719c97311900f08290e3b6",
+    "3df9e1e3fb240c42940c09c7af6f45da5561e82d",
+    "093e26b488f9a3f39340ab4f97793614f42bcc83",
+    "5133003b098389a0013eb162503555af696fb963",
+    "d9a244f5b7831bb8cf822a7194f4486c83f6090a",
+    "7379b1bba74a414d16963c92079ee43e240a17a1",
+    "9069b535e17978f08cc771b19d08ee962a30b8c4"
+  ],
+  "publication": {
+    "work_commit_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
+    "publication_commit_sha": null,
+    "publication_commit_self_sha_written": false,
+    "p_parent_sha": "9069b535e17978f08cc771b19d08ee962a30b8c4",
+    "push_status": "NOT_ATTEMPTED",
+    "remote_verification": "NOT_ATTEMPTED",
+    "force_push": false,
+    "history_rewrite": false,
+    "other_branches_modified": false
+  },
+  "return_to_gpt_required": true,
+  "completion_gate": "GPT_DECISION",
+  "deviations": [
+    "Subagent-driven development was unavailable because no subagent dispatch interface was exposed; execution used inline TDD.",
+    "A separate local blocker-record commit and focused corrective commits were retained; no published history was rewritten."
+  ],
+  "blockers": [],
+  "next_gpt_action": "Return WU-DC-CORE-01 to GPT for independent verification; do not begin WU-DC-CORE-02 until GPT explicitly authorizes it."
+}
