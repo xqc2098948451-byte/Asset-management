@@ -25,13 +25,14 @@ def test_upgrade_creates_only_data_collection_schema(
 ) -> None:
     upgrade(database_url)
 
-    schemas = database_engine.connect().execute(
-        text(
-            "SELECT nspname FROM pg_namespace "
-            "WHERE nspname NOT LIKE 'pg_%' AND nspname NOT IN ('information_schema', 'public') "
-            "ORDER BY nspname"
-        )
-    ).scalars().all()
+    with database_engine.connect() as connection:
+        schemas = connection.execute(
+            text(
+                "SELECT nspname FROM pg_namespace "
+                "WHERE nspname NOT LIKE 'pg_%' AND nspname NOT IN ('information_schema', 'public') "
+                "ORDER BY nspname"
+            )
+        ).scalars().all()
     assert schemas == ["data_collection"]
 
 
@@ -40,12 +41,13 @@ def test_schema_has_approved_internal_tables(
 ) -> None:
     upgrade(database_url)
 
-    tables = database_engine.connect().execute(
-        text(
-            "SELECT tablename FROM pg_tables WHERE schemaname = 'data_collection' "
-            "ORDER BY tablename"
-        )
-    ).scalars().all()
+    with database_engine.connect() as connection:
+        tables = connection.execute(
+            text(
+                "SELECT tablename FROM pg_tables WHERE schemaname = 'data_collection' "
+                "ORDER BY tablename"
+            )
+        ).scalars().all()
     assert tables == [
         "abc_quote_entry",
         "abc_quote_snapshot",
